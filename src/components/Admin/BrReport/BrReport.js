@@ -35,28 +35,36 @@ const BrReport = () => {
     let dt = d.getDate();
     let mn = d.getMonth() + 1;
     let yy = d.getFullYear();
-    setBrDate(yy + "-" + (mn <= 9 ? "0" + mn : mn) + "-" + dt);
+    setBrDate(
+      yy + "-" + (mn <= 9 ? "0" + mn : mn) + "-" + (dt <= 9 ? "0" + dt : dt)
+    );
   };
   const manageTerritoryDate = (e) => {
     const d = new Date(e.target.value);
     let dt = d.getDate();
     let mn = d.getMonth() + 1;
     let yy = d.getFullYear();
-    setTerritoryDate(yy + "-" + (mn <= 9 ? "0" + mn : mn) + "-" + dt);
+    setTerritoryDate(
+      yy + "-" + (mn <= 9 ? "0" + mn : mn) + "-" + (dt <= 9 ? "0" + dt : dt)
+    );
   };
   const manageAreaDate = (e) => {
     const d = new Date(e.target.value);
     let dt = d.getDate();
     let mn = d.getMonth() + 1;
     let yy = d.getFullYear();
-    setAreaDate(yy + "-" + (mn <= 9 ? "0" + mn : mn) + "-" + dt);
+    setAreaDate(
+      yy + "-" + (mn <= 9 ? "0" + mn : mn) + "-" + (dt <= 9 ? "0" + dt : dt)
+    );
   };
   const manageRegionDate = (e) => {
     const d = new Date(e.target.value);
     let dt = d.getDate();
     let mn = d.getMonth() + 1;
     let yy = d.getFullYear();
-    setRegionDate(yy + "-" + (mn <= 9 ? "0" + mn : mn) + "-" + dt);
+    setRegionDate(
+      yy + "-" + (mn <= 9 ? "0" + mn : mn) + "-" + (dt <= 9 ? "0" + dt : dt)
+    );
   };
   return (
     <div>
