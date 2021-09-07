@@ -4,25 +4,20 @@ import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import loginBg from "../../images/loginBg.gif";
 import { useContext } from "react";
-import { userContext } from "../../App";
+import { dateContext, timeContext, userContext } from "../../App";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./Login.css";
-// import moment from "moment";
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useContext(userContext);
-  console.log(loginInfo);
+  const [loginDate, setLoginDate] = useContext(dateContext);
+  const [loginTime, setLoginTime] = useContext(timeContext);
   const history = useHistory();
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
   const [matchedAgent, setMatchedAgent] = useState({});
-  console.log(loginInfo);
   const email = loginInfo.email;
-  console.log(email);
-  // const loginTime = moment().format("LTS");
-  // const loginDate = moment().format("l");
-  // console.log(loginTime, loginDate);
 
   useEffect(() => {
     fetch("http://192.168.10.11:5010/agent?email=" + email)
@@ -47,6 +42,28 @@ const Login = () => {
       alert("not Matched");
     }
   };
+  const loginTIME = new Date();
+  const date = loginTIME.getDay();
+  const month = loginTIME.getMonth() + 1;
+  const year = loginTIME.getFullYear();
+  const hour = loginTIME.getHours();
+  const minute = loginTIME.getMinutes();
+  const second = loginTIME.getSeconds();
+  console.log("Date:", date, month, year, "Time:", hour, minute, second);
+  setLoginDate(
+    year +
+      "-" +
+      (month <= 9 ? "0" + month : month) +
+      "-" +
+      (date <= 9 ? "0" + date : date)
+  );
+  setLoginTime(
+    (hour <= 9 ? "0" + hour : hour) +
+      ":" +
+      (minute <= 9 ? "0" + minute : minute) +
+      ":" +
+      (second <= 9 ? "0" + second : second)
+  );
   return (
     <div className="">
       <div className="login-page ml-3">

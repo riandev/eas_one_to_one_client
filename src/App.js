@@ -15,63 +15,71 @@ import AdminSignUp from "./components/Admin/AdminSignUp/AdminSignUp";
 
 export const userContext = createContext();
 export const adminContext = createContext();
+export const timeContext = createContext();
+export const dateContext = createContext();
 
 function App() {
   const [loginInfo, setLoginInfo] = useState([]);
   const [adminInfo, setAdminInfo] = useState([]);
+  const [loginDate, setLoginDate] = useState("");
+  const [loginTime, setLoginTime] = useState("");
 
   return (
     <adminContext.Provider value={[adminInfo, setAdminInfo]}>
       <userContext.Provider value={[loginInfo, setLoginInfo]}>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <PrivateRoute exact path="/dashboard">
-              <Dashboard></Dashboard>
-            </PrivateRoute>
-            <PrivateRouteAdmin exact path="/admin/cep">
-              <AdminDashboard></AdminDashboard>
-            </PrivateRouteAdmin>
-            <Route exact path="/admin/uploadLead">
-              <AdminDashboard></AdminDashboard>
-            </Route>
-            <Route exact path="/admin/export">
-              <AdminDashboard></AdminDashboard>
-            </Route>
-            <Route exact path="/admin/delete">
-              <AdminDashboard></AdminDashboard>
-            </Route>
-            <Route exact path="/admin/addLead">
-              <AdminDashboard></AdminDashboard>
-            </Route>
-            <Route exact path="/admin/generateReport">
-              <AdminDashboard></AdminDashboard>
-            </Route>
-            <Route exact path="/login">
-              <Login></Login>
-            </Route>
-            <Route exact path="/admin/login">
-              <AdminLogin></AdminLogin>
-            </Route>
-            <Route exact path="/admin/signup">
-              <AdminSignUp></AdminSignUp>
-            </Route>
-            <Route exact path="/dashboard/crm">
-              <Dashboard></Dashboard>
-            </Route>
-            <Route exact path="/admin/cep">
-              <AdminDashboard></AdminDashboard>
-            </Route>
-            <Route exact path="/dashboard/report">
-              <Reports></Reports>
-            </Route>
-            <Route exact path="/dashboard/qc">
-              <Qc></Qc>
-            </Route>
-          </Switch>
-        </Router>
+        <timeContext.Provider value={[loginTime, setLoginTime]}>
+          <dateContext.Provider value={[loginDate, setLoginDate]}>
+            <Router>
+              <Switch>
+                <Route exact path="/">
+                  <Home></Home>
+                </Route>
+                <PrivateRoute exact path="/dashboard">
+                  <Dashboard></Dashboard>
+                </PrivateRoute>
+                <PrivateRouteAdmin exact path="/admin/cep">
+                  <AdminDashboard></AdminDashboard>
+                </PrivateRouteAdmin>
+                <Route exact path="/admin/uploadLead">
+                  <AdminDashboard></AdminDashboard>
+                </Route>
+                <Route exact path="/admin/export">
+                  <AdminDashboard></AdminDashboard>
+                </Route>
+                <Route exact path="/admin/delete">
+                  <AdminDashboard></AdminDashboard>
+                </Route>
+                <Route exact path="/admin/addLead">
+                  <AdminDashboard></AdminDashboard>
+                </Route>
+                <Route exact path="/admin/generateReport">
+                  <AdminDashboard></AdminDashboard>
+                </Route>
+                <Route exact path="/login">
+                  <Login></Login>
+                </Route>
+                <Route exact path="/admin/login">
+                  <AdminLogin></AdminLogin>
+                </Route>
+                <Route exact path="/admin/signup">
+                  <AdminSignUp></AdminSignUp>
+                </Route>
+                <Route exact path="/dashboard/crm">
+                  <Dashboard></Dashboard>
+                </Route>
+                <Route exact path="/admin/cep">
+                  <AdminDashboard></AdminDashboard>
+                </Route>
+                <Route exact path="/dashboard/report">
+                  <Reports></Reports>
+                </Route>
+                <Route exact path="/dashboard/qc">
+                  <Qc></Qc>
+                </Route>
+              </Switch>
+            </Router>
+          </dateContext.Provider>
+        </timeContext.Provider>
       </userContext.Provider>
     </adminContext.Provider>
   );
