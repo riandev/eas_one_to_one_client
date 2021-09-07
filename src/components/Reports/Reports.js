@@ -32,28 +32,31 @@ const Reports = () => {
 
   let headers = [
     { label: "ID", key: "ID" },
-    { label: "DIID", key: "DIID" },
+    { label: "diid", key: "diid" },
+    { label: "Mail", key: "Mail" },
     { label: "Data_Status", key: "Data_Status" },
     { label: "data_date", key: "data_date" },
-    { label: "ACTIVITY_ID", key: "ACTIVITY_ID" },
-    { label: "TERITORY_NAME", key: "TERITORY_NAME" },
-    { label: "ZONE_NAME", key: "ZONE_NAME" },
-    { label: "ROUTE_NAME", key: "ROUTE_NAME" },
-    { label: "TEAM_ID", key: "TEAM_ID" },
-    { label: "TEAM_NAME", key: "TEAM_NAME" },
-    { label: "TM_USER_NAME", key: "TM_USER_NAME" },
-    { label: "TM_NAME", key: "TM_NAME" },
-    { label: "TM_CONTACT_NO", key: "TM_CONTACT_NO" },
-    { label: "OUTLET_NAME", key: "OUTLET_NAME" },
+    { label: "agencyName", key: "agencyName" },
+    { label: "allocated_target", key: "allocated_target" },
+    { label: "BA_Name", key: "BA_Name" },
+    { label: "ba_id", key: "ba_id" },
+    { label: "Region", key: "Region" },
+    { label: "Area", key: "Area" },
+    { label: "Territory", key: "Territory" },
     { label: "r_name", key: "r_name" },
     { label: "Consumer_No", key: "Consumer_No" },
-    { label: "USING_BRAND", key: "USING_BRAND" },
-    { label: "OFFERED_BRAND", key: "OFFERED_BRAND" },
-    { label: "SAMPLING_NO", key: "SAMPLING_NO" },
-    { label: "SWAPPING_NO", key: "SWAPPING_NO" },
-    { label: "SALES_PACK", key: "SALES_PACK" },
-    { label: "SALES_PACK_QTY", key: "SALES_PACK_QTY" },
-    { label: "ADD_DATE_TIME", key: "ADD_DATE_TIME" },
+    { label: "Age", key: "Age" },
+    { label: "EASOccupation", key: "EASOccupation" },
+    { label: "Outlet_Code", key: "Outlet_Code" },
+    { label: "Outlet_Name", key: "Outlet_Name" },
+    { label: "reason", key: "reason" },
+    { label: "signature", key: "signature" },
+    { label: "Current_Brand", key: "Current_Brand" },
+    { label: "watched_av", key: "watched_av" },
+    { label: "sales_status", key: "sales_status" },
+    { label: "brand", key: "brand" },
+    { label: "Sales_Point", key: "Sales_Point" },
+    { label: "Scope", key: "Scope" },
     { label: "for_d", key: "for_d" },
     { label: "agentID", key: "agentID" },
     { label: "qcBy", key: "qcChecked" },
@@ -69,10 +72,14 @@ const Reports = () => {
     { label: "q5", key: "answer5" },
     { label: "q6", key: "answer6" },
     { label: "q7", key: "answer7" },
-    { label: "q8", key: "answer8" },
+    { label: "q7dot1", key: "answer7dot1" },
+    { label: "q7dot1dot1", key: "answer7dot1dot1" },
+    { label: "q8dot1", key: "answer8dot1" },
+    { label: "q8dot2", key: "answer8dot2" },
     { label: "q9", key: "answer9" },
     { label: "q10", key: "answer10" },
     { label: "q11", key: "answer11" },
+    { label: "q11", key: "answer12" },
   ];
   return (
     <div className="mt-5">
@@ -114,7 +121,7 @@ const Reports = () => {
                     <CSVLink
                       headers={headers}
                       title="Export data to CSV"
-                      filename={`AKTCL_CEP_${date?.date}.csv`}
+                      filename={`JTI_ONE_To_One_${date?.date}.csv`}
                       data={downloaded}
                     >
                       `Download_${date?.date}`
@@ -134,7 +141,7 @@ const Reports = () => {
           <CSVLink
             headers={headers}
             title="Export data to CSV"
-            filename={"AKTCL_CEP.csv"}
+            filename={"JTI_ONE_To_One.csv"}
             data={report}
           >
             Download
