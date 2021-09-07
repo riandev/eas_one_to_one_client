@@ -178,7 +178,7 @@ const LeadGenerate = () => {
                   <CSVLink
                     headers={headers}
                     title="Export data to CSV"
-                    filename="AKTCL_CEP_regenerateLead.csv"
+                    filename="JTI_regenerateLead.csv"
                     data={regenerate}
                   >
                     Download

@@ -112,12 +112,7 @@ const Reports = () => {
                   </button>
                 </td>
                 <td>
-                  <button
-                    className="btn btn-info"
-                    // style={{
-                    //   display: downloaded.length > 0 ? "block" : "none",
-                    // }}
-                  >
+                  <button className="btn btn-info">
                     <CSVLink
                       headers={headers}
                       title="Export data to CSV"

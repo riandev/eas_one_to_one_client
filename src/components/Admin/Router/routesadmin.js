@@ -5,6 +5,7 @@ import LeadGenerate from "../LeadGenerate/LeadGenerate";
 import UploadLead from "../UploadLead/UploadLead";
 import DeleteLeads from "./../DeleteLeads/DeleteLeads";
 import BrReport from "./../BrReport/BrReport";
+import DownloadReport from "./../DownloadReport/DownloadReport";
 
 const routesadmin = [
   {
@@ -48,6 +49,13 @@ const routesadmin = [
     name: "Generate Reports",
     toolbar: () => <p className="text-white">Generate Reports</p>,
     main: () => <BrReport />,
+  },
+  {
+    path: "/admin/downloadReport",
+    exact: true,
+    name: "Download Reports",
+    toolbar: () => <p className="text-white">Download Reports</p>,
+    main: () => <DownloadReport />,
   },
 ];
 
