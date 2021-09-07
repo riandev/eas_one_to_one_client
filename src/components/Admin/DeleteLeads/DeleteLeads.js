@@ -5,13 +5,13 @@ const DeleteLeads = () => {
   const [dates, setDates] = useState([]);
   const [ddStatus, setDDStatus] = useState(false);
   useEffect(() => {
-    fetch("http://192.168.10.11:5010/reportDates")
+    fetch("http://localhost:5010/reportDates")
       .then((res) => res.json())
       .then((data) => setDates(data));
   }, []);
   function handleDateDelete(ddate) {
     console.log(ddate);
-    fetch("http://192.168.10.11:5010/deleteByDate?date=" + ddate, {
+    fetch("http://localhost:5010/deleteByDate?date=" + ddate, {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
     })
@@ -20,7 +20,7 @@ const DeleteLeads = () => {
     window.location.reload(true);
   }
   const handleDelete = () => {
-    fetch("http://192.168.10.11:5010/deleteAll", {
+    fetch("http://localhost:5010/deleteAll", {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
     })
