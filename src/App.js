@@ -58,6 +58,9 @@ function App() {
                 <Route exact path="/admin/downloadReport">
                   <AdminDashboard></AdminDashboard>
                 </Route>
+                <Route exact path="/admin/rangeReport">
+                  <AdminDashboard></AdminDashboard>
+                </Route>
                 <Route exact path="/login">
                   <Login></Login>
                 </Route>

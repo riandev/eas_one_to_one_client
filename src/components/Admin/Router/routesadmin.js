@@ -6,6 +6,7 @@ import UploadLead from "../UploadLead/UploadLead";
 import DeleteLeads from "./../DeleteLeads/DeleteLeads";
 import BrReport from "./../BrReport/BrReport";
 import DownloadReport from "./../DownloadReport/DownloadReport";
+import RangeReport from "../RangeReport/RangeReport";
 
 const routesadmin = [
   {
@@ -56,6 +57,13 @@ const routesadmin = [
     name: "Download Reports",
     toolbar: () => <p className="text-white">Download Reports</p>,
     main: () => <DownloadReport />,
+  },
+  {
+    path: "/admin/rangeReport",
+    exact: true,
+    name: "Range Reports",
+    toolbar: () => <p className="text-white">Range Reports</p>,
+    main: () => <RangeReport />,
   },
 ];
 
